@@ -56,14 +56,23 @@
   <p class="note" id="response" aria-live="polite">One tap to confirm. Zero meetings required.</p>
   <div class="footer"><span>made with ☕ & curiosity</span><span>build: good-vibes</span></div>
 </main>
+
 <script>
   const button = document.getElementById('rsvp');
   const response = document.getElementById('response');
+
   button.addEventListener('click', () => {
-    button.textContent = 'RSVP saved ✓';
-    response.textContent = 'Excellent choice. Reply to my message and we’ll lock in the time + place!';
-    button.setAttribute('aria-label', 'RSVP selected');
+    const phone = '91YOURNUMBER';
+    const message =
+      "I'm in! Let's brunch 🍳 See you tomorrow!";
+
+    const whatsappURL =
+      'https://wa.me/' + phone +
+      '?text=' + encodeURIComponent(message);
+
+    window.location.href = whatsappURL;
   });
 </script>
 </body>
 </html>
+
